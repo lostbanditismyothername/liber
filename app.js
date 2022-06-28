@@ -24,6 +24,7 @@ mongoose
 // Middlewares
 app.use(cors());
 app.use(express.json());
+// eslint-disable-next-line prettier/prettier
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms :body"));
 app.use(middleware.requestLogger);
 

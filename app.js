@@ -1,5 +1,5 @@
-const express = require("express");
 require("express-async-errors");
+const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms :body"));
 app.use(middleware.requestLogger);
 
-app.use("/api/", bookRouter);
+app.use("/api/books", bookRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

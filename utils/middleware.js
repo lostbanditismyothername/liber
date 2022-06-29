@@ -13,16 +13,9 @@ const unknownEndpoint = (_req, res) => {
   res.status(404).send({ Error: "Unknown Endpoint" });
 };
 
-// eslint-disable-next-line consistent-return
 const errorHandler = (error, _req, res, next) => {
-  logger.error(error.message);
-
-  if (error.name === "CastError") {
-    return res.status(400).send({ Error: "Malformatted ID" });
-  }
-  if (error.name === "ValidationError") {
-    return res.status(400).json({ Error: Error.message });
-  }
+  logger.error(`Error: ${error.message}`);
+  res.status(error.status || 400).send(error.message);
 
   next(error);
 };

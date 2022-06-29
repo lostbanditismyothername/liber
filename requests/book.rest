@@ -2,6 +2,10 @@ GET http://localhost:3001/api/books
 
 ###
 
+GET http://localhost:3001/api/books/62bb1d4d432f965b351e9285
+
+###
+
 POST http://localhost:3001/api/books
 Content-Type: application/json
 
@@ -11,3 +15,21 @@ Content-Type: application/json
     "language": "english",
     "likes": 5
 }
+
+###
+
+PUT http://localhost:3001/api/books/62bb1d4d432f965b351e9285
+Content-Type: application/json
+
+{
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "language": "french",
+    "likes": 5
+}
+
+### 
+
+DELETE  http://localhost:3001/api/books/62bc342ef569d5f4b3ad234f
+
+###

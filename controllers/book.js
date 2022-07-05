@@ -14,7 +14,7 @@ const getBook = async (req, res) => {
   const book = await Book.findById(req.params.id);
 
   if (!book) {
-    res.status(400).send(`No such book with the ID: ${req.params.id} `);
+    res.status(404).send(`No such book with the ID: ${req.params.id} `);
   } else {
     res.status(200).json(book);
   }
@@ -59,7 +59,7 @@ const deleteBook = async (req, res) => {
     res.status(400).send(`No such book with the ID: ${bookID}`);
   } else {
     await Book.findByIdAndDelete(req.params.id);
-    res.status(204);
+    res.status(204).end();
   }
 };
 

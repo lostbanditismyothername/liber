@@ -1,6 +1,5 @@
 const logger = require("./logger");
 
-// Log details for each req
 const requestLogger = (req, _res, next) => {
   logger.info("Method:", req.method);
   logger.info("Path:", req.path);

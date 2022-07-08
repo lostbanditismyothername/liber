@@ -2,7 +2,7 @@
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": 0,
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
@@ -10,6 +10,7 @@
     "object-shorthand": "off",
     "class-methods-use-this": "off",
     "no-underscore-dangle": 0,
+    "no-param-reassign": 0,
     "node/no-unpublished-require": [
       "error",
       {

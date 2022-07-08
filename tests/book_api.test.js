@@ -46,16 +46,14 @@ describe("viewing a specific book", () => {
     const validNonexistingId = await helper.nonExistingID();
     const res = await api.get(`/api/books/${validNonexistingId}`);
 
-    console.log(res.status);
-
-    // expect(res.status).toBe(404);
+    expect(res.status).toBe(404);
   });
 
   test("fails with statuscode 400 id is invalid", async () => {
     const invalidId = "5a3d5da59070081a82a3445";
     const res = await api.get(`/api/books/${invalidId}`);
 
-    // expect(res.status).toBe(400);
+    expect(res.status).toBe(400);
   });
 });
 
